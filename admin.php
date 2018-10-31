@@ -18,6 +18,16 @@ if($result){
 	$address=implode(',', $mail);
 }
 
+//获取状态
+// $name=file_get_contents('php://input', 'name');
+// $sql = "SELECT state From customer WHERE name=$name";
+// $result = mysqli_query($conn,$sql) or die ('error'.mysql_error().'产生的问题的sql<br/>'.$sql);
+// if($result){
+	
+// }
+
+
+
 
 //期刊推送
 
@@ -88,16 +98,17 @@ echo "<script>alert('推送失败');location.href='admin.php'</script>";
 <head>
 
 <meta charset="UTF-8">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <title>Dremin-note-后台管理</title>
 
 <style type="text/css">
 
-body {background:#FFE4E1; font-family: '微软雅黑'} * {margin: 0;padding: 0;}
+body {background-image: url(bg.jpg); font-family: '微软雅黑'} * {margin: 0;padding: 0;}
 
 input,textarea {font-family: '微软雅黑';color:	#FF6A6A;}
 
-#main {width: 800px; overflow: hidden; text-align: center; border: 1px solid #ccc; background: #fff; margin: 50px auto;opacity: 0.8;}
+#main {width: 800px; overflow: hidden; text-align: center; border: 1px solid #ccc; background: #fff; margin: 50px auto;opacity: 0.9;}
 
 #name {color: 	#FF6A6A; margin: 10px}
 #name1 {color: #FF6A6A; margin: 10px;}

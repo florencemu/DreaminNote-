@@ -65,11 +65,11 @@ $sql="select * from admin where id='$admin' and pwd='$pwd'";
 
 <style type="text/css">
 
-body {background:#FFE4E1; font-family: '微软雅黑'} * {margin: 0;padding: 0;}
+body {background-image: url(bg.jpg); font-family: '微软雅黑'} * {margin: 0;padding: 0;}
 
 input,textarea {font-family: '微软雅黑';color:	#FF6A6A;}
 
-#main {width: 400px; height: 300px; overflow: hidden; text-align: center; border: 1px solid #ccc; background: #fff; margin: 200px auto;opacity: 0.8;}
+#main {width: 400px; height: 300px; overflow: hidden; text-align: center; border: 1px solid #ccc; margin: 200px auto; background:#FFFFFF; opacity: 0.9;}
 
 #name {color: #FF6A6A; margin: 30px}
 #name1 {color: #FF6A6A; margin: 30px;}
