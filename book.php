@@ -3,14 +3,16 @@ header('Content-Type:text/html;charset=utf8');
 include('conn.php');
 include 'smtp.func.php';
 
+//提交预定
 $from = $_SERVER['HTTP_REFERER'];
-if ($from = "http://localhost/dreaminnote/book.html")
+
+if ($from == "http://localhost/dreaminnote/book.html")
 	$type = "数码单人";
-else if ($from = "http://localhost/dreaminnote/book_double.html")
+else if ($from == "http://localhost/dreaminnote/book_double.html")
 	$type = "数码双人";
-else if ($from = "http://localhost/dreaminnote/book_film.html")
+else if ($from == "http://localhost/dreaminnote/book_film.html")
 	$type = "胶片单人";
-else if ($from = "http://localhost/dreaminnote/book_create.html")
+else if ($from == "http://localhost/dreaminnote/book_create.html")
 	$type = "创作";
 
 $name = $_POST['name'];
@@ -22,7 +24,7 @@ $ps = $_POST['ps'];
 
 
 
-$infomation = $time." ".$address." ".$ps;
+$infomation = $time." ".$address." ".$ps."。";
 
 $sql = "INSERT INTO `customer` (`name`, `phone`, `mail`, `info`, `photo_info`, `state`) VALUES ('$name', '$phone', '$mail', '$infomation', '$type','0');";
 $sql1=" SELECT mail_address FROM mail WHERE mail_address = '$mail'";

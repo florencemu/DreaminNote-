@@ -28,10 +28,9 @@ if($result){
 
 
 
-
 //期刊推送
 
-$sql = "SELECT name,photo_info,phone,info,state From customer";
+$sql = "SELECT * From customer";
 $result = mysqli_query($conn,$sql) or die ('error'.mysql_error().'产生的问题的sql<br/>'.$sql);
 
 
@@ -139,12 +138,36 @@ input,textarea {font-family: '微软雅黑';color:	#FF6A6A;}
 	❤
 	<h3>Dremin-note-后台管理</h3>
 	</div>
-<input type="submit" value="注销" onclick="out()">
+		<input type="submit" value="注销" onclick="out()">
 	<div id='name1'>
-	❤
+	-
 	<h4>预约信息</h4>
+	❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤
+		<form action="admin_sel" method="post">
+		套餐内容：
+			<select name="type">
+			  <option value ="0">-</option>
+			  <option value ="数码单人">数码单人</option>
+			  <option value ="数码双人">数码双人</option>
+			  <option value="胶片单人">胶片单人</option>
+			  <option value="创作">创作</option>
+			</select>
+			&nbsp;
+			&nbsp;
+
+		订单状态：
+			<select name="state">
+			  <option value ="0">-</option>
+			  <option value ="1">仅预定</option>
+			  <option value ="2">已付定金</option>
+			  <option value="3">已拍摄</option>
+			  <option value="4">已出片</option>
+			</select> &nbsp;&nbsp;
+			<input type="submit" value="筛选">
+		</form>
 	</div>
-	<form action="index.php?do=action" method="post">
+
+
 
 	<div id="table1">
 	<table>
@@ -172,9 +195,7 @@ if($num=mysqli_num_rows($result))
 	<td><input type="button" value="定金">
 	<input type="button" value="拍摄">
 	<input type="button" value="出片"></td>
-	<td><input type="button" value="修改">
-	<input type="button" value="删除"></td>
-	</tr>
+	<td><a href="<?php echo 'admin_del.php'.'?'.'id='.$row['num']; ?>" style="color:#FF6A6A" onClick="return confirm('确定取消?');" >取消预定</a></td>
 
 <?php
 		}
@@ -185,7 +206,6 @@ mysqli_close($conn);
 	</table>
 	</div>
 
-	</form>
 
 
 	<div id='name2'>
